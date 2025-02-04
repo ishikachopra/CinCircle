@@ -99,7 +99,7 @@ export default function CineCircleLandingPage() {
 
     return (
         <div className="bg-black text-white min-h-screen relative">
-            {/* Navbar */}
+            {/* Navbar
             <header className="flex flex-wrap items-center justify-between px-6 py-4 sticky top-0 bg-gray-950">
                 <h1 className="text-xl md:text-2xl font-bold">CinCircle</h1>
                 <nav className="hidden md:flex space-x-6">
@@ -117,7 +117,7 @@ export default function CineCircleLandingPage() {
                     </a>
                 </nav>
                 <div className="flex items-center space-x-6">
-                    {/* Notification Icon */}
+                    Notification Icon
                     <div className="relative">
                         <FaBell className="text-2xl hover:text-purple-500 cursor-pointer transition-all duration-300" />
                         <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
@@ -125,12 +125,12 @@ export default function CineCircleLandingPage() {
                         </span>
                     </div>
 
-                    {/* Profile Icon */}
+                    Profile Icon
                     <div className="relative">
                         <FaUserCircle className="text-3xl hover:text-purple-500 cursor-pointer transition-all duration-300" />
                     </div>
                 </div>
-            </header>
+            </header> */}
 
 
 
@@ -220,16 +220,16 @@ export default function CineCircleLandingPage() {
                 </motion.div>
             </div>
             
-            <footer className="bg-gray-950 text-white py-12">
+            {/* <footer className="bg-gray-950 text-white py-12">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Logo and Description */}
+                        
                         <div>
                             <h3 className="text-3xl font-semibold text-purple-500 mb-4">Movie Night</h3>
                             <p className="text-gray-400">Enjoy your favorite movies with friends, anytime and anywhere. Create rooms, invite friends, and watch together in sync.</p>
                         </div>
 
-                        {/* Quick Links */}
+                        
                         <div>
                             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
                             <ul className="space-y-2">
@@ -240,7 +240,7 @@ export default function CineCircleLandingPage() {
                             </ul>
                         </div>
 
-                        {/* Social Media Links */}
+                        
                         <div>
                             <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
                             <div className="flex space-x-4">
@@ -260,12 +260,13 @@ export default function CineCircleLandingPage() {
                         </div>
                     </div>
 
-                    {/* Footer Bottom */}
+                    Footer Bottom
                     <div className="mt-12 text-center text-gray-400">
                         <p>&copy; 2025 Movie Night. All rights reserved.</p>
                     </div>
+
                 </div>
-            </footer>
+            </footer> */}
 
         </div>
     );
