@@ -9,15 +9,16 @@ import Insights from "../sections/Insights";
 import WhatsNew from "../sections/WhatsNew";
 import World from "../sections/World";
 import CineCircleLandingPage from "../pages/Landing";
+import GridBackground from "../components/BgGrid";
 
 const Page = () => (
   <>
   <div className="">
     <Navbar />
-    <CineCircleLandingPage />
-    <Hero />
+    {/* <CineCircleLandingPage /> */}
+    <GridBackground/>
     <div className="relative">
-      <About />
+      {/* <About /> */}
       <div className="gradient-03 z-0" />
       <Explore />
     </div>

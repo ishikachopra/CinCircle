@@ -16,14 +16,14 @@ const Hero = () => (
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
           CINECIRCLE
         </motion.h1>
-        {/* <motion.div
+        <motion.div
           variants={textVariant(1.2)}
           className="flex flex-row justify-center items-center"
         >
-          <h1 className={styles.heroHeading}>MB</h1>
+          <h1 className={styles.heroHeading}>MA</h1>
           <div className={styles.heroDText} />
-          <h1 className={styles.heroHeading}>Ness</h1>
-        </motion.div> */}
+          <h1 className={styles.heroHeading}>NESS</h1>
+        </motion.div>
       </div>
 
       <motion.div
@@ -32,11 +32,11 @@ const Hero = () => (
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
 
-        <img
-          src="/bg2.jpeg"
+        {/* <img
+          src="/bg3.jpeg"
           alt="hero_cover"
           className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
-        />
+        /> */}
 
         <a href="#explore">
           <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10">
