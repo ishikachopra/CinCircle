@@ -1,59 +1,53 @@
-import { motion } from 'framer-motion';
-import { socials } from '../constants';
-
-import styles from '../styles';
-import { footerVariants } from '../utils/motion';
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
 const Footer = () => (
-  <motion.footer
-    variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
-  >
-    <div className="footer-gradient" />
-    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
-      <div className="flex items-center justify-between flex-wrap gap-5">
-        <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-          Enter the Metaverse
-        </h4>
-        <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
-          <img
-            src="/headset.svg"
-            alt="headset"
-            className="w-[24px] h-[24px] object-contain"
-          />
-          <span className="font-normal text-[16px] text-white">
-            Enter Metaverse
-          </span>
-        </button>
-      </div>
+  <footer className="bg-gray-950 text-white py-12">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <div>
+                            <h3 className="text-3xl font-semibold text-purple-500 mb-4">Movie Night</h3>
+                            <p className="text-gray-400">Enjoy your favorite movies with friends, anytime and anywhere. Create rooms, invite friends, and watch together in sync.</p>
+                        </div>
 
-      <div className="flex flex-col">
-        <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+                        
+                        <div>
+                            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+                            <ul className="space-y-2">
+                                <li><a href="#home" className="hover:text-purple-500">Home</a></li>
+                                <li><a href="#features" className="hover:text-purple-500">Features</a></li>
+                                <li><a href="#how-it-works" className="hover:text-purple-500">How It Works</a></li>
+                                <li><a href="#contact" className="hover:text-purple-500">Contact</a></li>
+                            </ul>
+                        </div>
 
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">
-            METAVERUS
-          </h4>
-          <p className="font-normal text-[14px] text-white opacity-50">
-            Copyright © 2021 - 2022 Metaversus. All rights reserved.
-          </p>
+                        
+                        <div>
+                            <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
+                            <div className="flex space-x-4">
+                                <a href="https://facebook.com" className="hover:text-purple-500">
+                                    <FaFacebook size={24} />
+                                </a>
+                                <a href="https://twitter.com" className="hover:text-purple-500">
+                                    <FaTwitter size={24} />
+                                </a>
+                                <a href="https://instagram.com" className="hover:text-purple-500">
+                                    <FaInstagram size={24} />
+                                </a>
+                                <a href="https://github.com" className="hover:text-purple-500">
+                                    <FaGithub size={24} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-          <div className="flex gap-4">
-            {socials.map((social) => (
-              <img
-                key={social.name}
-                src={social.url}
-                alt={social.name}
-                className="w-[24px] h-[24px] object-contain cursor-pointer"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </motion.footer>
+                    Footer Bottom
+                    <div className="mt-12 text-center text-gray-400">
+                        <p>&copy; 2025 Movie Night. All rights reserved.</p>
+                    </div>
+
+                </div>
+            </footer> 
 );
 
 export default Footer;
