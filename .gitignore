@@ -1,5 +1,11 @@
 # Node modules
-node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables
+client/.env
+server/.env
+
 npm-debug.log*
 yarn-error.log
 
