@@ -1,20 +1,21 @@
 // import Link from 'next/link';
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight, FaUserCircle, FaBell, FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-            <header className="flex flex-wrap items-center justify-between px-6 py-4 sticky top-0 bg-gray-950">
+            <header className="flex flex-wrap items-center justify-between px-6 py-4 sticky top-0 ">
                 <h1 className="text-xl md:text-2xl font-bold">CinCircle</h1>
                 <nav className="hidden md:flex space-x-6">
-                    <a href="#" className="text-base  hover:text-purple-500 transition duration-300">
+                    <NavLink to="/" className="text-base  hover:text-purple-500 transition duration-300">
                         DASHBOARD
-                    </a>
-                    <a href="#" className="text-base  hover:text-purple-500 transition duration-300">
+                    </NavLink>
+                    <NavLink to="/movies" className="text-base  hover:text-purple-500 transition duration-300">
                         MOVIES
-                    </a>
+                    </NavLink>
                     <a href="#" className="text-base hover:text-purple-500 transition duration-300">
                         JOIN
                     </a>

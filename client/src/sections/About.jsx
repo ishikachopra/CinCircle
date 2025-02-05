@@ -18,21 +18,22 @@ const About = () => (
 
       <motion.p
         variants={fadeIn("up", "tween", 0.2, 1)}
-        className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
+        className="mt-[8px] font-normal sm:text-[28px] text-[20px] text-center text-secondary-white text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300 "
       >
-        <span className="font-extrabold text-white">CineCircle</span> is the
+        CineCircle
+         is the
         ultimate way to enjoy movies with friends, no matter where you are.
         Create private rooms, watch movies in perfect sync, and chat in
         real-time with{" "}
-        <span className="font-extrabold text-white">
+        
           seamless video streaming
-        </span>
+        
         . Experience the{" "}
-        <span className="font-extrabold text-white">
+      
           future of movie nights
-        </span>
+        
         with synchronized playback and effortless connection. Just grab your{" "}
-        <span className="font-extrabold text-white">popcorn</span> and start
+        popcorn and start
         watching together!
       </motion.p>
 

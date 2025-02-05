@@ -1,88 +1,101 @@
 export const exploreWorlds = [
   {
     id: 'world-1',
-    imgUrl: '/planet-01.png',
-    title: 'The Hogwarts',
+    imgUrl: 'https://wp.scoopwhoop.com/wp-content/uploads/2023/08/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@._V1_FMjpg_UX1000_.jpeg?w=691',
+    title: 'Anime',
   },
   {
     id: 'world-2',
-    imgUrl: '/planet-02.png',
-    title: 'The Upside Down',
+    imgUrl: 'https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg',
+    title: 'Science Fiction',
   },
   {
     id: 'world-3',
-    imgUrl: '/planet-03.png',
-    title: 'Kadirojo Permai',
+    imgUrl: 'https://m.media-amazon.com/images/I/5147F62RsML._AC_UF1000,1000_QL80_.jpg',
+    title: 'Horror',
   },
   {
     id: 'world-4',
-    imgUrl: '/planet-04.png',
-    title: 'Paradise Island',
+    imgUrl: 'https://qph.cf2.quoracdn.net/main-qimg-eecd6a7de309aa97779af69500c96fb9-lq',
+    title: 'Thriller',
   },
   {
     id: 'world-5',
-    imgUrl: '/planet-05.png',
-    title: 'Hawkins Labs',
+    imgUrl: 'https://m.media-amazon.com/images/S/pv-target-images/cbc9791b586bb2f8677e298d260f707ce355108dcc6f1947fe2081162de13cf4._SX1080_FMjpg_.jpg',
+    title: 'Rom-Coms',
   },
 ];
 
-export const startingFeatures = [
-  'Find a world that suits you and you want to enter',
-  'Enter the world by reading basmalah to be safe',
-  'No need to beat around the bush, just stay on the gas and have fun',
+
+
+export const movies = [
+  {
+    title: "Avengers: Endgame",
+    image: "/images/raya.jpg",
+    description: "The ultimate superhero showdown - 97% Match",
+  },
+  {
+    title: "John Wick",
+    image: "/images/johnwick.jpg",
+    description: "An action-packed thriller - 95% Match",
+  },
+  {
+    title: "Avengers: Endgame",
+    image: "/images/raya.jpg",
+    description: "The ultimate superhero showdown - 97% Match",
+  },
+  {
+    title: "The Dark Knight",
+    image: "/images/johnwick.jpg",
+    description: "An intense crime drama - 96% Match",
+  },
+  {
+    title: "Avengers: Endgame",
+    image: "/images/raya.jpg",
+    description: "The ultimate superhero showdown - 97% Match",
+  },
+  {
+    title: "The Dark Knight",
+    image: "/images/johnwick.jpg",
+    description: "An intense crime drama - 96% Match",
+  },
+  {
+    title: "Avengers: Endgame",
+    image: "/images/raya.jpg",
+    description: "The ultimate superhero showdown - 97% Match",
+  },
+  {
+    title: "The Dark Knight",
+    image: "/images/johnwick.jpg",
+    description: "An intense crime drama - 96% Match",
+  },
+  {
+    title: "Avengers: Endgame",
+    image: "/images/raya.jpg",
+    description: "The ultimate superhero showdown - 97% Match",
+  }
 ];
 
-export const newFeatures = [
-  {
-    imgUrl: '/vrpano.svg',
-    title: 'A new world',
-    subtitle:
-        'we have the latest update with new world for you to try never mind',
-  },
-  {
-    imgUrl: '/headset.svg',
-    title: 'More realistic',
-    subtitle:
-        'In the latest update, your eyes are narrow, making the world more realistic than ever',
-  },
-];
 
 export const insights = [
   {
-    imgUrl: '/planet-06.png',
-    title: 'The launch of the Metaverse makes Elon musk ketar-ketir',
+    imgUrl: 'https://m.media-amazon.com/images/I/81C5A5waXfL._AC_UF1000,1000_QL80_.jpg',
+    title: 'The Future of Movie Nights: Watch Together, Anytime',
     subtitle:
-        'Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Diam maecenas sed enim ut sem viverra alique.',
+      'Experience seamless group streaming with Cincircle. No more sync issues, just pure entertainment with friends and family.',
   },
   {
-    imgUrl: '/planet-07.png',
-    title: '7 tips to easily master the madness of the Metaverse',
+    imgUrl: 'https://res.cloudinary.com/iml/image/upload/w_1024,c_scale/c_crop,g_custom/widgetdocs/LA_QAV_Showroom_05_akzggm.jpg',
+    title: '5 Ways Cincircle Enhances Your Movie Experience',
     subtitle:
-        'Vitae congue eu consequat ac felis donec. Et magnis dis parturient montes nascetur ridiculus mus. Convallis tellus id interdum',
+      'From real-time reactions to synchronized playback, explore how Cincircle makes virtual movie nights more engaging than ever.',
   },
   {
-    imgUrl: '/planet-08.png',
-    title: 'With one platform you can explore the whole world virtually',
+    imgUrl: 'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Blade008_Guided_tour_2136x1200_f?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=786&hei=443&qlt=90&fit=constrain',
+    title: 'Bringing the Cinema to You: The Power of Shared Streaming',
     subtitle:
-        'Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem',
+      'Whether it’s a late-night binge or a weekend watch party, enjoy movies together no matter the distance with Cincircle.',
   },
 ];
 
-export const socials = [
-  {
-    name: 'twitter',
-    url: '/twitter.svg',
-  },
-  {
-    name: 'linkedin',
-    url: '/linkedin.svg',
-  },
-  {
-    name: 'instagram',
-    url: '/instagram.svg',
-  },
-  {
-    name: 'facebook',
-    url: '/facebook.svg',
-  },
-];
+

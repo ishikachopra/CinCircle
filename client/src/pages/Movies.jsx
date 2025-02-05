@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaChevronLeft, FaChevronRight, FaUserCircle, FaBell, FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { movies } from '../constants';
 
 const Button = ({ variant, children, className, ...props }) => {
     const baseStyle =
@@ -21,53 +22,6 @@ const Button = ({ variant, children, className, ...props }) => {
     );
 };
 
-const movies = [
-    {
-        title: "Avengers: Endgame",
-        image: "/images/raya.jpg",
-        description: "The ultimate superhero showdown - 97% Match",
-    },
-    {
-        title: "John Wick",
-        image: "/images/johnwick.jpg",
-        description: "An action-packed thriller - 95% Match",
-    },
-    {
-        title: "Avengers: Endgame",
-        image: "/images/raya.jpg",
-        description: "The ultimate superhero showdown - 97% Match",
-    },
-    {
-        title: "The Dark Knight",
-        image: "/images/johnwick.jpg",
-        description: "An intense crime drama - 96% Match",
-    },
-    {
-        title: "Avengers: Endgame",
-        image: "/images/raya.jpg",
-        description: "The ultimate superhero showdown - 97% Match",
-    },
-    {
-        title: "The Dark Knight",
-        image: "/images/johnwick.jpg",
-        description: "An intense crime drama - 96% Match",
-    },
-    {
-        title: "Avengers: Endgame",
-        image: "/images/raya.jpg",
-        description: "The ultimate superhero showdown - 97% Match",
-    },
-    {
-        title: "The Dark Knight",
-        image: "/images/johnwick.jpg",
-        description: "An intense crime drama - 96% Match",
-    },
-    {
-        title: "Avengers: Endgame",
-        image: "/images/raya.jpg",
-        description: "The ultimate superhero showdown - 97% Match",
-    }
-];
 
 export default function CineCircleLandingPage() {
     const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
