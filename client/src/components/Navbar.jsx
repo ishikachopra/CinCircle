@@ -1,44 +1,121 @@
-// import Link from 'next/link';
-import { useState } from 'react';
-import { FaChevronLeft, FaChevronRight, FaUserCircle, FaBell, FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import {
+  FaUserCircle,
+  FaBell,
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaFilm,
+  FaUsers,
+  FaUpload,
+} from "react-icons/fa";
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-            <header className="flex flex-wrap items-center justify-between px-6 py-4 sticky top-0 ">
-                <h1 className="text-xl md:text-2xl font-bold">CinCircle</h1>
-                <nav className="hidden md:flex space-x-6">
-                    <NavLink to="/" className="text-base  hover:text-purple-500 transition duration-300">
-                        DASHBOARD
-                    </NavLink>
-                    <NavLink to="/movies" className="text-base  hover:text-purple-500 transition duration-300">
-                        MOVIES
-                    </NavLink>
-                    <a href="#" className="text-base hover:text-purple-500 transition duration-300">
-                        JOIN
-                    </a>
-                    <a href="#" className="text-base  hover:text-purple-500 transition duration-300">
-                        UPLOAD
-                    </a>
-                </nav>
-                <div className="flex items-center space-x-6">
-                    
-                    <div className="relative">
-                        <FaBell className="text-2xl hover:text-purple-500 cursor-pointer transition-all duration-300" />
-                        <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                            3
-                        </span>
-                    </div>
+    <header className="sticky top-0 z-50 w-full bg-opacity-90 backdrop-blur-md shadow-md">
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <div className="flex items-center space-x-4">
+          <img
+            src="/logo.png"
+            alt="CinCircle Logo"
+            className="h-14 w-auto object-contain" // Increased height for better visibility
+          />
+          <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-wide">
+            CinCircle
+          </h1>
+        </div>
 
-                    
-                    <div className="relative">
-                        <FaUserCircle className="text-3xl hover:text-purple-500 cursor-pointer transition-all duration-300" />
-                    </div>
-                </div>
-            </header>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-8">
+          <NavLink
+            to="/"
+            className="flex items-center gap-2 text-white font-medium hover:text-purple-400 transition duration-300"
+          >
+            <FaHome className="text-lg" /> HOME
+          </NavLink>
+          <NavLink
+            to="/movies"
+            className="flex items-center gap-2 text-white font-medium hover:text-purple-400 transition duration-300"
+          >
+            <FaFilm className="text-lg" /> MOVIES
+          </NavLink>
+          <a
+            href="#"
+            className="flex items-center gap-2 text-white font-medium hover:text-purple-400 transition duration-300"
+          >
+            <FaUsers className="text-lg" /> JOIN
+          </a>
+          <a
+            href="#"
+            className="flex items-center gap-2 text-white font-medium hover:text-purple-400 transition duration-300"
+          >
+            <FaUpload className="text-lg" /> UPLOAD
+          </a>
+        </nav>
 
+        {/* Icons Section */}
+        <div className="flex items-center space-x-6">
+          {/* Notifications */}
+          <div className="relative">
+            <FaBell className="text-2xl text-white hover:text-purple-400 cursor-pointer transition-all duration-300" />
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              3
+            </span>
+          </div>
+
+          {/* User Icon */}
+          <div className="relative">
+            <FaUserCircle className="text-3xl text-white hover:text-purple-400 cursor-pointer transition-all duration-300" />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white text-2xl focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-opacity-95 backdrop-blur-md absolute top-16 left-0 w-full shadow-xl">
+          <nav className="flex flex-col items-center space-y-6 py-6">
+            <NavLink
+              to="/"
+              className="flex items-center gap-2 text-white text-lg font-medium hover:text-purple-400 transition duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <FaHome /> HOME
+            </NavLink>
+            <NavLink
+              to="/movies"
+              className="flex items-center gap-2 text-white text-lg font-medium hover:text-purple-400 transition duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <FaFilm /> MOVIES
+            </NavLink>
+            <a
+              href="#"
+              className="flex items-center gap-2 text-white text-lg font-medium hover:text-purple-400 transition duration-300"
+            >
+              <FaUsers /> JOIN
+            </a>
+            <a
+              href="#"
+              className="flex items-center gap-2 text-white text-lg font-medium hover:text-purple-400 transition duration-300"
+            >
+              <FaUpload /> UPLOAD
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 
