@@ -11,7 +11,9 @@ function App() {
   // )
   return (
     <>
-      <div className="relative min-h-screen bg-gray-950 overflow-hidden flex items-center justify-center">
+
+      <div>
+      <div className="relative bg-gray-950 overflow-hidden flex items-center justify-center">
         {/* Blurry Moving White Balls */}
         <div className="absolute top-0 left-0 w-full h-full">
           {/* Ball 1 */}
@@ -25,8 +27,10 @@ function App() {
         </div>
 
         {/* Main Content */}
+        
         <Page />
       </div>
+    </div>
     </>
   );
 

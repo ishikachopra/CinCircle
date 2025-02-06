@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       animation: {
@@ -19,6 +16,10 @@ export default {
           "0%": { transform: "translateY(0px) translateX(0px)" },
           "100%": { transform: "translateY(50px) translateX(-50px)" },
         },
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },
