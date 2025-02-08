@@ -23,7 +23,7 @@ const GridBackground = () => {
     return (
         <>
 
-            <div class="relative min-h-screen flex flex-col items-center justify-center bg-gray-900 overflow-hidden bg-opacity-0 lg:ml-20 lg:mr-20">
+            <div class="relative min-h-screen flex flex-col items-center justify-center bg-gray-900 overflow-hidden bg-opacity-0 ">
 
 
                 <div class="grid-background absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-125 ">

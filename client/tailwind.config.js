@@ -4,22 +4,23 @@ export default {
   theme: {
     extend: {
       animation: {
-        moveWave: "moveWave 15s infinite alternate ease-in-out",
-        moveWaveReverse: "moveWaveReverse 18s infinite alternate ease-in-out",
+        blob: "blob 7s infinite",
       },
       keyframes: {
-        moveWave: {
-          "0%": { transform: "translateY(0px) translateX(0px)" },
-          "100%": { transform: "translateY(-50px) translateX(50px)" },
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "tranlate(0px, 0px) scale(1)",
+          },
         },
-        moveWaveReverse: {
-          "0%": { transform: "translateY(0px) translateX(0px)" },
-          "100%": { transform: "translateY(50px) translateX(-50px)" },
-        },
-      },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },
