@@ -51,8 +51,8 @@ const SignUp = () => {
     <div className="flex flex-col justify-between md:flex-row bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 text-white">
       {/* Left Side - UI Section */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
         transition={{ duration: 1 }}
         style={{
           backgroundImage: 'url("./wave2.svg")',
@@ -82,8 +82,8 @@ const SignUp = () => {
 
       {/* Right Side - Signup Form */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
         transition={{ duration: 1 }}
         className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-3/7 p-10 md:p-10 bg-black rounded-t-md"
       >
@@ -144,7 +144,7 @@ const SignUp = () => {
           </div>
 
           <motion.button
-            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded transition-all"
+            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded "
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"

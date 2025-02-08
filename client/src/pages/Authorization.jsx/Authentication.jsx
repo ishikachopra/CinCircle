@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import FloatingShape from "../../components/FloatingShape";
 import SignUp from "./Signup";
+import Login from "./Login";
 import { Toaster } from "react-hot-toast";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { useAuthStore } from "../../store/authStore";
@@ -20,7 +21,7 @@ const Authentication = () => {
       <div className="w-full ">
         <Routes>
           <Route path="/signup" element={<SignUp />} />
-
+          <Route path="/login" element={<Login />} />
           <Route path="/verify-email" element={<Verify />} />
         </Routes>
 
