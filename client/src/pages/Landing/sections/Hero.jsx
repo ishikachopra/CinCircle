@@ -52,6 +52,7 @@ const Hero = () => (
       </motion.div>
       <About />
     </motion.div>
+    
     <div className="md:w-1/2 flex items-baseline h-full -rotate-6 gap-3 ">
       {/* Left Small Image */}
       <img
