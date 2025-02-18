@@ -126,12 +126,13 @@ const Card = ({ children, highlight, delay, isCenter, isUltimate }) => {
       transition={{ duration: 0.6, delay }}
       whileHover={{
         transition: { duration: 0.2, ease: "easeOut" },
-        boxShadow: "0px 12px 35px rgba(168, 85, 247, 0.7), 0px 4px 12px rgba(168, 85, 247, 0.5)", // Softer, but still prominent shadow
+        boxShadow: "0px 15px 50px rgba(168, 85, 247, 0.4), 0px 6px 18px rgba(168, 85, 247, 0.3)", // Softer shadow with more blur
+ // Softer, but still prominent shadow
         borderWidth: "2px",
         borderColor: "rgb(172, 126, 255)", // Darker border color
       }}
       className={`p-8 w-[260px] h-[400px] rounded-2xl shadow-xl transition-all border border-white/30 backdrop-blur-lg flex flex-col items-center justify-center 
-        ${isUltimate ? " bg-yellow-200 bg-opacity-40 text-white" : "bg-white/20 text-white"}`}
+        ${isUltimate ? " bg-yellow-500 bg-opacity-20 text-white" : "bg-white/20 text-white"}`}
     >
       {children}
     </motion.div>
@@ -181,7 +182,7 @@ export default function Subscription() {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={isSectionInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 1, type: "all" }}
+        transition={{ duration: 0.4, type: "all" }}
         className="p-10 rounded-2xl shadow-lg text-center"
       >
         <h1 className="text-4xl font-bold mb-6">Watch Movies Together, Anytime!</h1>
