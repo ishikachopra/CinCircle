@@ -6,14 +6,14 @@ import { slideIn, staggerContainer, textVariant } from '../../../utils/motions';
 import { Play } from 'lucide-react';
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6 flex justify-center align-middle h-full`}>
+  <section className={`${styles.yPaddings} sm:pl-16 pl-6 flex justify-center align-middle h-screen`}>
 
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`flex flex-col`}
+      className={`flex flex-col align-middle justify-center mt-20`}
     >
       <div className="flex justify-center  flex-col relative z-10">
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
@@ -53,7 +53,7 @@ const Hero = () => (
       </motion.div>
       <About />
     </motion.div>
-    <div className="md:w-1/2 flex items-baseline  -rotate-6 gap-3 h-96">
+    <div className="md:w-1/2 flex items-baseline h-full -rotate-6 gap-3 ">
       {/* Left Small Image */}
       <img
         src="https://cdn.vectorstock.com/i/1000v/38/48/gamer-gaming-logo-vector-47133848.jpg"

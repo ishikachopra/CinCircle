@@ -67,7 +67,7 @@ const GridBackground = () => {
                 </div>
 
                 <Hero />
-                {/* <About /> */}
+             
 
             </div>
         </>
