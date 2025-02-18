@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import About from './About';
 import styles from '../../../styles';
-
 import { slideIn, staggerContainer, textVariant } from '../../../utils/motions';
 import { Play } from 'lucide-react';
 
@@ -56,19 +55,19 @@ const Hero = () => (
     <div className="md:w-1/2 flex items-baseline h-full -rotate-6 gap-3 ">
       {/* Left Small Image */}
       <img
-        src="https://cdn.vectorstock.com/i/1000v/38/48/gamer-gaming-logo-vector-47133848.jpg"
+        src="/IronMan.webp"
         alt="Game Art 1"
         className="w-1/3 h-2/3 clip-diamond"
       />
       {/* Center Large Image */}
       <img
-        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blood-red-esports-gaming-logo-design-template-ffde75ff6d5fdbc87cb8c0603dfecc76_screen.jpg?ts=1734420057"
+        src="/sizume.jpg"
         alt="Game Art 2"
         className="w-2/5 h-full z-10 shadow-lg clip-diamond"
       />
       {/* Right Small Image */}
       <img
-        src="https://cdn.vectorstock.com/i/1000v/38/48/gamer-gaming-logo-vector-47133848.jpg"
+        src="/lala.jpg"
         alt="Game Art 3"
         className="w-1/3 h-2/3  clip-diamond"
       />
