@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from 'framer-motion';
-import { Film } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Film } from "lucide-react";
 import {
   FaUserCircle,
   FaBell,
@@ -35,44 +35,46 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex space-x-8">
           <motion.a
-            whileHover={{ scale: 1.05, color: '#a78bfa' }}
+            whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
             className="text-gray-300 transition"
           >
-            Home
+            <NavLink to="/"> Home </NavLink>
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.05, color: '#a78bfa' }}
+            whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
             className="text-gray-300 transition"
           >
-            Movies
+            <NavLink to="/movies"> Movies </NavLink>
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.05, color: '#a78bfa' }}
+            whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
             className="text-gray-300 transition"
           >
             TV Shows
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.05, color: '#a78bfa' }}
+            whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
             className="text-gray-300 transition"
           >
             Pricing
           </motion.a>
         </div>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20"
-        >
-          Sign In
-        </motion.button>
+        <NavLink to="/signup">
+          {" "}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20"
+          >
+            Sign In
+          </motion.button>{" "}
+        </NavLink>
       </div>
     </motion.nav>
-
   );
 };
 
