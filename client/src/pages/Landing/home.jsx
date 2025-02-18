@@ -9,7 +9,7 @@ const Home = () => (
 
     <div className="relative bg-gray-950 overflow-hidden flex items-center justify-center">
 
-      <div className="absolute top-0 left-0 w-full h-full">
+      {/* <div className="absolute top-0 left-0 w-full h-full">
 
         <div className="absolute w-[30vw] h-[30vw] bg-white opacity-10 blur-3xl rounded-full top-10 left-10 animate-moveWave"></div>
 
@@ -18,7 +18,7 @@ const Home = () => (
         <div className="absolute w-[35vw] h-[35vw] bg-white opacity-10 blur-3xl rounded-full bottom-10 right-10 animate-moveWave"></div>
 
         <div className="absolute w-[20vw] h-[20vw] bg-white opacity-20 blur-2xl rounded-full bottom-1/3 right-1/4 animate-moveWaveReverse"></div>
-      </div>
+      </div> */}
 
 
       <div className="w-full">
@@ -37,7 +37,7 @@ const Home = () => (
           <div className="gradient-04 z-0" />
         </div>
       </div>
-      
+
 
     </div>
 

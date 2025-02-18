@@ -1,44 +1,82 @@
 import { motion } from 'framer-motion';
-
+import About from './About';
 import styles from '../../../styles';
+
 import { slideIn, staggerContainer, textVariant } from '../../../utils/motions';
+import { Play } from 'lucide-react';
 
 const Hero = () => (
-  <section
-    className={`${styles.yPaddings} sm:pl-16 pl-6`}
-    style={{ fontFamily: 'Montserrat, sans-serif' }}
-  >
+  <section className={`${styles.yPaddings} sm:pl-16 pl-6 flex justify-center align-middle h-full`}>
+
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
+      className={`flex flex-col`}
     >
-      <div className="flex justify-center items-center flex-col relative z-10">
-        <motion.h1
-          variants={textVariant(1.1)}
-          className={`${styles.heroHeading} font-extrabold text-6xl`}
-        >
+      <div className="flex justify-center  flex-col relative z-10">
+        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
           CINECIRCLE
         </motion.h1>
         <motion.div
           variants={textVariant(1.2)}
-          className="flex flex-row justify-center items-center text-2xl font-semibold"
+          className="flex flex-row  items-center"
         >
-          <h2 className={styles.heroSubHeading}>Stream-</h2>
-          <span className={styles.heroSubHeadingWhite}>Share</span>
-          <h2 className={styles.heroSubHeading}>-Connect!</h2>
+          <h2 className={styles.heroSubHeading}>Stream </h2>
+          <span className={styles.heroSubHeadingWhite} > Share</span>
+          <h2 className={styles.heroSubHeading}>Connect!</h2>
         </motion.div>
       </div>
+      <div className="flex  ">
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-purple-600 text-white px-8 py-3 rounded-full flex items-center space-x-2 hover:bg-purple-700 transition shadow-lg shadow-purple-500/20 justify-center z-10 w-56"
+        >
+          <Play className="w-5 h-5" />
+          <span>Start Watching</span>
+        </motion.button>
+      </div>
+
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
         className="relative w-full md:-mt-[20px] -mt-[12px]"
       >
-        <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
+
+
+
       </motion.div>
+      <About />
     </motion.div>
+    <div className="md:w-1/2 flex items-baseline  -rotate-6 gap-3 h-96">
+      {/* Left Small Image */}
+      <img
+        src="https://cdn.vectorstock.com/i/1000v/38/48/gamer-gaming-logo-vector-47133848.jpg"
+        alt="Game Art 1"
+        className="w-1/3 h-2/3 clip-diamond"
+      />
+      {/* Center Large Image */}
+      <img
+        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blood-red-esports-gaming-logo-design-template-ffde75ff6d5fdbc87cb8c0603dfecc76_screen.jpg?ts=1734420057"
+        alt="Game Art 2"
+        className="w-2/5 h-full z-10 shadow-lg clip-diamond"
+      />
+      {/* Right Small Image */}
+      <img
+        src="https://cdn.vectorstock.com/i/1000v/38/48/gamer-gaming-logo-vector-47133848.jpg"
+        alt="Game Art 3"
+        className="w-1/3 h-2/3  clip-diamond"
+      />
+    </div>
+
+
+
+
   </section>
 );
 

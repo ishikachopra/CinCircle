@@ -66,8 +66,8 @@ const GridBackground = () => {
                     <div class="col-span-1 bg-gray-800 rounded animate-pulse"></div>
                 </div>
 
-                <Hero/>
-                <About />
+                <Hero />
+                {/* <About /> */}
 
             </div>
         </>
