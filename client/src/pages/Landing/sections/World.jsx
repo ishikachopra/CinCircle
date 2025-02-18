@@ -6,28 +6,27 @@ import {TypingText} from '../../../components';
 import { fadeIn, staggerContainer } from '../../../utils/motions';
 
 const World = () => (
-  <section className={`${styles.paddings} relative z-10`}>
+  <section className={`${styles.paddings} relative z-10 bg-gradient-to-tl from-purple-950 via-black to-black min-h-screen`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
+      className={`$lg:w-[500px] w-full mx-auto flex flex-col`}
     >
 
       <TypingText title="| People on the World" textStyles="text-center" />
       <TitleText
         title={(
-          <>Track friends around you and invite them to play together in the same
-            world
+          <>Track friends around you and invite them to watch movie Together
           </>
         )}
-        textStyles="text-center"
+        textStyles="text-center font-medium "
       />
 
       <motion.div
         variants={fadeIn('up', 'tween', 0.3, 1)}
-        className="relative mt-[68px] flex w-full h-[550px] "
+        className="relative mt-[68px] flex w-4/5 h-[550px] mx-auto "
       >
         <img src="/map.png" alt="map" className="w-full lg:w-[80%] mx-auto h-auto" />
 

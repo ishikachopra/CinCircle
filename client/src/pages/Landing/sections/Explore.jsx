@@ -10,20 +10,21 @@ const Explore = () => {
   const [active, setActive] = useState('world-2');
 
   return (
-    <section className={`${styles.paddings}`} id="explore">
+    <section className={`${styles.paddings} bg-gradient-to-br from-purple-950 via-black to-black` } id="explore">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
+        className={`2xl:max-w-[1100px] w-full mx-auto flex flex-col`}
       >
         <TypingText title="| Explore The CineWorld" textStyles="text-center" />
         <TitleText
-          title={<>Choose the genre you want <br className="md:block hidden" /> to explore</>}
-          textStyles="text-center"
+          title={<>Choose the genre you want  to explore</>}
+          textStyles="text-center font-medium"
         />
-        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+       
+        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[60vh] gap-5">
           {exploreWorlds.map((world, index) => (
             <ExploreCard
               key={world.id}
