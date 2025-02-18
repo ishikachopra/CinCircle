@@ -4,7 +4,10 @@ import styles from '../../../styles';
 import { slideIn, staggerContainer, textVariant } from '../../../utils/motions';
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
+  <section
+    className={`${styles.yPaddings} sm:pl-16 pl-6`}
+    style={{ fontFamily: 'Montserrat, sans-serif' }}
+  >
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -13,15 +16,18 @@ const Hero = () => (
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <div className="flex justify-center items-center flex-col relative z-10">
-        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
+        <motion.h1
+          variants={textVariant(1.1)}
+          className={`${styles.heroHeading} font-extrabold text-6xl`}
+        >
           CINECIRCLE
         </motion.h1>
         <motion.div
           variants={textVariant(1.2)}
-          className="flex flex-row justify-center items-center"
+          className="flex flex-row justify-center items-center text-2xl font-semibold"
         >
           <h2 className={styles.heroSubHeading}>Stream-</h2>
-          <span className={styles.heroSubHeadingWhite} >Share</span>
+          <span className={styles.heroSubHeadingWhite}>Share</span>
           <h2 className={styles.heroSubHeading}>-Connect!</h2>
         </motion.div>
       </div>
@@ -31,7 +37,6 @@ const Hero = () => (
         className="relative w-full md:-mt-[20px] -mt-[12px]"
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
-        
       </motion.div>
     </motion.div>
   </section>
