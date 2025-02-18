@@ -70,7 +70,7 @@ const Login = () => {
                 initial={{ opacity: 0}}
                 animate={{ opacity: 1}}
                 transition={{ duration: 1 }}
-                className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-3/7 p-10 md:p-10 bg-black rounded-t-md min-h-[80vh]"
+                className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-3/7 p-10 md:p-10 bg-black rounded-t-md min-h-[90vh]"
             >
                 <h2 className="text-3xl font-semibold text-purple-400 mb-6 text-center font-quicksand">
                     Create Account
