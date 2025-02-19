@@ -157,14 +157,14 @@ const subscriptions = [
   },
   {
     title: "Ultimate",
-    price: "$19.99/mo",
-    features: ["Everything in Premium", "4K streaming", "Multiple devices"],
+    price: "₹249/mo",
+    features: ["Everything in Premium", "4K streaming", "Multiple devices" , "Parallel Streaming"],
     highlight: true,
     isUltimate: true, // Apply golden background to Ultimate
   },
   {
     title: "Premium",
-    price: "$9.99/mo",
+    price: "₹159/mo",
     features: ["Everything in Basic", "HD streaming", "Priority support"],
   },
 ];
