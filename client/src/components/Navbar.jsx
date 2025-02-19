@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Film } from "lucide-react";
 import { useAuthStore } from "../store/authStore";
+import JoinRoom from "./Join";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+      const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   const {user}=useAuthStore();
-  console.log("navbar",user);
 
   return (
     <motion.nav
@@ -44,9 +45,11 @@ const Navbar = () => {
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
             className="text-gray-300 transition"
+            onClick={()=>setIsJoinModalOpen(true)}
           >
             Join
           </motion.a>
+          
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
@@ -69,6 +72,11 @@ const Navbar = () => {
           </NavLink>
          )} 
       </div>
+      <AnimatePresence>
+        {isJoinModalOpen && (
+          <JoinRoom onClose={() => setIsJoinModalOpen(false)} />
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

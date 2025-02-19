@@ -3,8 +3,8 @@ import { motion} from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
-    Users, Film, Lock, Globe, Copy, Share2,
-    X, Plus, MapIcon as WhatsappIcon, Mail, Twitter, LogIn
+     Film, Lock, Globe, Copy,
+    X, MapIcon as WhatsappIcon, Mail, Twitter
 } from 'lucide-react';
 
 function CreateRoom({ onClose }) {
@@ -53,7 +53,7 @@ function CreateRoom({ onClose }) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            onClick={() => setIsCreateModalOpen(false)}
+                            onClick={onClose}
                             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                         />
 

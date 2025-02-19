@@ -5,13 +5,13 @@ import { slideIn, staggerContainer, textVariant } from '../../../utils/motions';
 import { Play } from 'lucide-react';
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6 flex justify-center align-middle h-screen`}>
+  <section className={`${styles.yPaddings} sm:pl-16 pl-6 flex justify-center align-middle h-screen lg:flex-nowrap flex-wrap-reverse`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`flex flex-col align-middle justify-center mt-20`}
+      className={`flex flex-col align-middle justify-center md:mt-20`}
     >
       <div className="flex justify-center flex-col relative z-10">
         <motion.h1 variants={textVariant(1)} className={styles.heroHeading}>
@@ -47,8 +47,8 @@ const Hero = () => (
     </motion.div>
 
     {/* Animation for the 3 images */}
-    <div className="md:w-1/2 flex items-center justify-center h-full">
-      <div className="h-3/4 w-full flex items-baseline -rotate-6 gap-3">
+    <div className="md:w-1/2 flex items-center justify-center h-full ">
+      <div className="h-1/2 lg:h-3/4 w-full flex items-baseline -rotate-6 gap-3 mt-96 mb-10 md:mt-0 md:mb-0">
         {/* Left Small Image */}
         <motion.img
           src="/IronMan.webp"

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion} from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
-    Users, Film, Lock, Globe, Copy, Share2,
-    X, Plus, MapIcon as WhatsappIcon, Mail, Twitter, LogIn
+    X, MapIcon as  LogIn
 } from 'lucide-react';
 
-function JoinRoom() {
-    const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
+function JoinRoom({ onClose }) {
     const [joinRoomId, setJoinRoomId] = useState('');
     const [joinPassword, setJoinPassword] = useState('');
 
@@ -28,16 +26,14 @@ function JoinRoom() {
         <div className="min-h-screen bg-background text-text">
             
 
-            {/* Join Room Modal */}
-            <AnimatePresence>
-                {isJoinModalOpen && (
+
                     <div className="fixed inset-0 flex items-center justify-center z-50">
                         {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            onClick={() => setIsJoinModalOpen(false)}
+                    onClick={onClose}
                             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                         />
 
@@ -56,7 +52,7 @@ function JoinRoom() {
                                         Join Watch Party
                                     </h2>
                                     <button
-                                        onClick={() => setIsJoinModalOpen(false)}
+                                onClick={onClose}
                                         className="text-text-secondary hover:text-text transition-colors"
                                     >
                                         <X size={24} />
@@ -99,7 +95,7 @@ function JoinRoom() {
                             <div className="border-t border-surface-light p-6">
                                 <div className="flex gap-4">
                                     <button
-                                        onClick={() => setIsJoinModalOpen(false)}
+                                onClick={onClose}
                                         className="flex-1 px-4 py-3 rounded-lg border border-surface-light hover:bg-surface-light transition-colors"
                                     >
                                         Cancel
@@ -116,8 +112,6 @@ function JoinRoom() {
                             </div>
                         </motion.div>
                     </div>
-                )}
-            </AnimatePresence>
         </div>
     );
 }

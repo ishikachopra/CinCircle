@@ -18,7 +18,7 @@ const About = () => (
 
       <motion.div
         variants={fadeIn("up", "tween", 0.2, 1)}
-        className="mt-[30px] font-light sm:text-[24px] text-[18px]  text-secondary-white text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300 "
+        className="mt-[30px] font-light sm:text-[24px] text-[14px]  text-secondary-white text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300 "
       >
         CineCircle
         is the

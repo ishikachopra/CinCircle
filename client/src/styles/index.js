@@ -16,11 +16,11 @@ const styles = {
 
   // hero section
   heroHeading:
-      'font-bold font-serif lg:text-[100px] md:text-[90px] sm:text-[60px] text-[44px] lg:leading-[100.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] uppercase font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 drop-shadow-lg',
+      'font-bold font-serif lg:text-[100px] md:text-[90px] text-[40px] lg:leading-[100.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] uppercase font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 drop-shadow-lg mt-10 md:m-0',
   heroSubHeading:
-      ' lg:text-[40px] md:text-[100px] sm:text-[60px] text-[44px] lg:leading-[100.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] text-purple-500 gap-10 ' ,
+      ' lg:text-[40px] md:text-[100px] sm:text-[60px] text-[24px] lg:leading-[100.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] text-purple-500 gap-10 ' ,
     heroSubHeadingWhite:
-        ' lg:text-[40px] md:text-[100px] sm:text-[60px] text-[44px] lg:leading-[158.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px]  text-white',
+        ' lg:text-[40px] md:text-[100px] sm:text-[60px] text-[24px] lg:leading-[158.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px]  text-white',
 };
 
 export default styles;

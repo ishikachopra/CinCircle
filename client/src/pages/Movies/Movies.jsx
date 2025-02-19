@@ -103,15 +103,15 @@ export default function CineCircleLandingPage() {
 
                         {/* Slider*/}
                         <motion.div
-                            className="relative  left-1/2 transform -translate-x-1/2 w-full overflow-hidden"
+                            className="relative  left-1/2 transform -translate-x-1/2 w-full mx-auto"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                         >
                             <div className="flex md:space-x-8 justify-center items-center mt-14 mb-14">
-                                <button onClick={prevSlide} className=" z-10 p-2 bg-black bg-opacity-80 rounded-full m-auto mr-2 h-full ">
+                                {/* <button onClick={prevSlide} className=" z-10 p-2 bg-black bg-opacity-80 rounded-full m-auto mr-2 h-full ">
                                     <FaChevronLeft className="size-1.5 lg:size-7" />
-                                </button>
+                                </button> */}
                                 <div className="flex space-x-8 ">
                                     <motion.div
                                         className="flex gap-3 lg:gap-8 justify-center transition-transform "
@@ -139,9 +139,9 @@ export default function CineCircleLandingPage() {
 
 
                                 </div>
-                                <button onClick={nextSlide} className="z-10 p-2 bg-black bg-opacity-80 rounded-full m-auto ml-2 h-full ">
+                                {/* <button onClick={nextSlide} className="z-10 p-2 bg-black bg-opacity-80 rounded-full m-auto ml-2 h-full ">
                                     <FaChevronRight className="size-1.5 lg:size-7" />
-                                </button>
+                                </button> */}
                             </div>
                         </motion.div>
                     </div>
