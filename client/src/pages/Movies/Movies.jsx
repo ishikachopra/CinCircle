@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { movies } from '../constants';
+import { movies } from '../../constants';
+import CreateRoom from "./Create";
 
 const Button = ({ variant, children, className, ...props }) => {
     const baseStyle =
@@ -26,6 +27,7 @@ const Button = ({ variant, children, className, ...props }) => {
 export default function CineCircleLandingPage() {
     const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
     const [startIndex, setStartIndex] = useState(0);
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
     const moviesPerPage = {
         sm: 3,
@@ -84,7 +86,7 @@ export default function CineCircleLandingPage() {
                                 {movies[currentMovieIndex].description}
                             </p>
                             <div className="flex space-x-4">
-                                <Button variant="default" className="text-sm md:text-xl lg:text-lg px-6 md:px-8 py-2">
+                                <Button variant="default" onClick={() => setIsCreateModalOpen(true)} className="text-sm md:text-xl lg:text-lg px-6 md:px-8 py-2">
                                     Create Room
                                 </Button>
                                 <Button variant="ghost" className="text-sm md:text-xl lg:text-lg px-6 md:px-8 py-2">
@@ -92,6 +94,12 @@ export default function CineCircleLandingPage() {
                                 </Button>
                             </div>
                         </motion.div>
+                        <AnimatePresence>
+                            {isCreateModalOpen && (
+                                <CreateRoom onClose={() => setIsCreateModalOpen(false)} />
+                            )}
+                        </AnimatePresence>
+
 
                         {/* Slider*/}
                         <motion.div

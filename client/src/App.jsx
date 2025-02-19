@@ -1,7 +1,7 @@
 import './App.css'
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import CineCircleLandingPage from "./pages/Movies";
+import CineCircleLandingPage from "./pages/Movies/Movies";
 import Login from "./pages/Authorization/Login";
 import SignUp from "./pages/Authorization/Signup";
 import Home from "./pages/Landing/home";

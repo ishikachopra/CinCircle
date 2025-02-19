@@ -3,24 +3,32 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        'primary': '#A855F7',
+        'primary-dark': '#9333EA',
+        'background': '#09090B',
+        'surface': '#18181B',
+        'surface-light': '#27272A',
+        'text': '#FAFAFA',
+        'text-secondary': '#A1A1AA',
+      },
       animation: {
-        blob: "blob 7s infinite",
+        'gradient': 'gradient 8s linear infinite',
       },
       keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
+        gradient: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
           },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
           },
         },
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
     },
   },

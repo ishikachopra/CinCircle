@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import axios from "axios";
 
 const API_URL =
@@ -8,7 +9,7 @@ const API_URL =
 
 axios.defaults.withCredentials = true;
 
-export const useAuthStore = create((set) => ({
+export const useAuthStore = create(persist((set) => ({
   user: null,
   isAuthenticated: false,
   error: null,
@@ -47,14 +48,17 @@ export const useAuthStore = create((set) => ({
         email,
         password,
       });
+      // console.log("User after login:", response.data.user);
       set({
         isAuthenticated: true,
         user: response.data.user,
         error: null,
         isLoading: false,
       });
-      console.log("User after login:", response.data.user);
+      // console.log("Updated user in Zustand:", useAuthStore.getState().user);
+      
     } catch (error) {
+      console.error("Login error:", error.response?.data || error);
       set({
         error: error.response?.data?.message || "Error logging in",
         isLoading: false,
@@ -141,4 +145,4 @@ export const useAuthStore = create((set) => ({
       throw error;
     }
   },
-}));
+})));
