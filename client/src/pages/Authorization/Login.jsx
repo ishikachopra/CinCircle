@@ -93,9 +93,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     
-                    {error && (
-                        <p className="text-red-500 font-semibold text-center">{error}</p>
-                    )}
+                    
 
                     
 

@@ -1,14 +1,14 @@
-import { useState ,useContext} from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 import { Film } from "lucide-react";
 import { useAuthStore } from "../store/authStore";
 import JoinRoom from "./Join";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-      const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
-  const {user}=useAuthStore();
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
+  const { user } = useAuthStore();
 
   return (
     <motion.nav
@@ -30,14 +30,12 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8">
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
-           
             className="text-gray-300 transition"
           >
             <NavLink to="/"> Home </NavLink>
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
-           
             className="text-gray-300 transition"
           >
             <NavLink to="/movies"> Movies </NavLink>
@@ -45,11 +43,11 @@ const Navbar = () => {
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
             className="text-gray-300 transition hover:cursor-pointer"
-            onClick={()=>setIsJoinModalOpen(true)}
+            onClick={() => setIsJoinModalOpen(true)}
           >
-            Join 
+            Join
           </motion.a>
-          
+
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
             href="#"
@@ -61,16 +59,27 @@ const Navbar = () => {
         {user ? (
           <span className="text-white font-medium">{user.name}</span>
         ) : (
-          <NavLink to="/signup">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20"
-            >
-              Sign Up
-            </motion.button>
-          </NavLink>
-         )} 
+          <div className="flex">
+            <NavLink to="/signup">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-purple-600 text-white px-6 py-2 rounded-none first:rounded-l-full last:rounded-r-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20"
+              >
+                Sign Up
+              </motion.button>
+            </NavLink>
+            <NavLink to="/login">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-purple-600 text-white px-6 py-2 rounded-none first:rounded-l-full last:rounded-r-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20"
+              >
+                Sign In
+              </motion.button>
+            </NavLink>
+          </div>
+        )}
       </div>
       <AnimatePresence>
         {isJoinModalOpen && (

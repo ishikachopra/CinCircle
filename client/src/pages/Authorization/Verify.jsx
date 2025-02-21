@@ -37,7 +37,7 @@ const Verify = () => {
     const verificationCode = code.join("");
     try {
       await verifyEmail(verificationCode);
-      navigate("/");
+      navigate("/login");
       toast.success("Email Verified successfully");
     } catch (error) {
       console.log(error);
