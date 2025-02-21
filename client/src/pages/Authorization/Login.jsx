@@ -120,6 +120,12 @@ const Login = () => {
                         SignUp
                     </Link>
                 </p>
+                <p className="mt-4 text-gray-400 text-center">
+                    {/* Don't have an account?{" "} */}
+                    <Link to="/forgot-password" className="text-purple-400">
+                        Forgot Password?
+                    </Link>
+                </p>
             </motion.div>
         </div>
     );

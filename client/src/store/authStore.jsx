@@ -17,8 +17,10 @@ export const useAuthStore = create(persist((set) => ({
   isCheckingAuth: true,
   message: null,
 
-  signup: async (email, password, name, phoneNumber, gender,dateOfBirth) => {
+
+  signup: async (email, password, name, phoneNumber, gender, dateOfBirth) => {
     set({ isLoading: true, error: null });
+  
     try {
       const response = await axios.post(`${API_URL}/signup`, {
         email,
@@ -28,19 +30,48 @@ export const useAuthStore = create(persist((set) => ({
         gender,
         dateOfBirth
       });
-      set({
-        user: response.data.user,
-        isAuthenticated: true,
-        isLoading: false,
-      });
+  
+      set({ isLoading: false });
+      return response.data;  // Return successful response
     } catch (error) {
+      const errorMessage = error.response?.data?.message || "Error signing up";
+  
       set({
-        error: error.response.data.message || "Error signing up",
+        error: errorMessage,
         isLoading: false,
       });
-      throw error;
+  
+      return { error: errorMessage }; // Return error object
+    } finally {
+      set({ isLoading: false }); // Ensure `isLoading` is reset in all cases
     }
-  },
+  }
+  
+  // signup: async (email, password, name, phoneNumber, gender,dateOfBirth) => {
+  //   set({ isLoading: true, error: null });
+  //   try {
+  //     const response = await axios.post(`${API_URL}/signup`, {
+  //       email,
+  //       password,
+  //       name,
+  //       phoneNumber,
+  //       gender,
+  //       dateOfBirth
+  //     });
+  //     set({
+  //       user: response.data.user,
+  //       isAuthenticated: true,
+  //       isLoading: false,
+  //     });
+  //   } catch (error) {
+  //     set({
+  //       error: error.response.data.message || "Error signing up",
+  //       isLoading: false,
+  //     });
+  //     throw error;
+  //   }
+  // }
+  ,
   login: async (email, password) => {
     set({ isLoading: true, error: null });
     try {
@@ -87,8 +118,6 @@ export const useAuthStore = create(persist((set) => ({
     try {
       const response = await axios.post(`${API_URL}/verify-email`, { code });
       set({
-        user: response.data.user,
-        isAuthenticated: true,
         isLoading: false,
       });
       return response.data;

@@ -31,7 +31,7 @@ export const signup = async (req, res) => {
         const hashedPassword = await bcryptjs.hash(password, 10);
         const verificationToken = Math.floor(
             100000 + Math.random() * 900000
-        ).toString(); // Generate the token
+        ).toString(); 
 
         const user = new User({
             email,
@@ -45,16 +45,11 @@ export const signup = async (req, res) => {
         });
         await user.save();
 
-        generateTokenAndSetCookie(res, user._id);
-
         await sendVerificationEmail(user.email, user.verificationToken);
         res.status(201).json({
             success: true,
             message: "User created successfully",
-            user: {
-                ...user._doc,
-                password: undefined,
-            },
+            
         });
 
 
@@ -159,7 +154,8 @@ export const forgotPassword = async (req, res) => {
 
         await sendPasswordResetEmail(
             user.email,
-            `${process.env.CLIENT_URL}/reset-password/${resetToken}`
+            // `${process.env.CLIENT_URL}/reset-password/${resetToken}`
+            `http://localhost:5173/reset-password/${resetToken}`
         );
         res
             .status(200)
@@ -180,7 +176,8 @@ export const resetPassword = async (req, res) => {
         console.log("Reset password route hit"); // Debugging log
         const { token } = req.params; // Get the token from URL params
         const { password } = req.body; // Get the password from the request body
-
+        console.log(token);
+        console.log(password);
         // Find the user with the reset token and ensure it is not expired
         const user = await User.findOne({
             resetPasswordToken: token,

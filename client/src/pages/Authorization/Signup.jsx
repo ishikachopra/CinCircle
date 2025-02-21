@@ -14,36 +14,120 @@ import { Link, useNavigate } from "react-router-dom";
 import PasswordStrengthMeter from "../../components/PasswordStrength";
 import { useAuthStore } from "../../store/authStore";
 import Select from "../../components/Select";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState(""); // Added Confirm Password
   const [phoneNumber, setPhoneNumber] = useState("");
   const [gender, setGender] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
-  const { signup, error, isLoading } = useAuthStore();
+  const { signup, isLoading } = useAuthStore();
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+
+    // Trim input values
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedPhone = phoneNumber.trim();
+    const trimmedPassword = password.trim();
+    const trimmedConfirmPassword = confirmPassword.trim();
+
+    // Name validation
+    const nameRegex = /^[A-Za-z\s]+$/;
     if (
-      !name ||
-      !email ||
-      !password ||
-      !phoneNumber ||
-      !gender ||
-      !dateOfBirth
+      !trimmedName ||
+      !nameRegex.test(trimmedName) ||
+      trimmedName.length > 15
     ) {
-      console.log("Please fill in all fields.");
+      toast.error(
+        "Name must contain only alphabets, max 15 characters, and no extra spaces."
+      );
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
+      toast.error("Enter a valid Gmail address (e.g., example@gmail.com).");
+      return;
+    }
+
+    // Password validation
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!trimmedPassword || !passwordRegex.test(trimmedPassword)) {
+      toast.error(
+        "Password must be at least 6 characters, include uppercase, lowercase, a number, and a special character."
+      );
+      return;
+    }
+
+    // Confirm Password validation
+    if (trimmedPassword !== trimmedConfirmPassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
+    // Phone number validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!trimmedPhone || !phoneRegex.test(trimmedPhone)) {
+      toast.error("Phone number must be exactly 10 digits.");
+      return;
+    }
+
+    // Gender validation
+    if (!gender) {
+      toast.error("Please select a gender.");
+      return;
+    }
+
+    // Date of Birth validation
+    if (!dateOfBirth) {
+      toast.error("Date of birth is required.");
+      return;
+    }
+
+    // Age validation (between 12 and 80)
+    const birthDate = new Date(dateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+    if (age < 12 || age > 80) {
+      toast.error("You must be between 12 and 80 years old to register.");
       return;
     }
 
     try {
-      await signup(email, password, name, phoneNumber, gender, dateOfBirth);
+      const response = await signup(
+        email,
+        password,
+        name,
+        phoneNumber,
+        gender,
+        dateOfBirth
+      );
+
+      if (response?.error) {
+        toast.error(response.error || "Signup failed. Please try again.");
+        return;
+      }
+
+      toast.success("Sign-up successful! Redirecting...");
       navigate("/verify-email");
     } catch (error) {
       console.log(error);
+      toast.error(error.message || "Error during sign-up.");
     }
   };
 
@@ -52,7 +136,7 @@ const SignUp = () => {
       {/* Left Side - UI Section */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         style={{
           backgroundImage: 'url("./wave2.svg")',
@@ -60,21 +144,11 @@ const SignUp = () => {
         }}
         className="flex flex-col items-center justify-center w-full text-center p-10 font-poppins"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-4xl md:text-5xl font-bold mb-4 z-10"
-        >
+        <motion.h1 className="text-4xl md:text-5xl font-bold mb-4 z-10">
           Welcome to CinCircle
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-lg text-gray-300 max-w-md z-10"
-        >
+        <motion.p className="text-lg text-gray-300 max-w-md z-10">
           Join the ultimate movie community! Sign up and explore the world of
           cinema.
         </motion.p>
@@ -82,8 +156,8 @@ const SignUp = () => {
 
       {/* Right Side - Signup Form */}
       <motion.div
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-3/7 p-10 md:p-10 bg-black rounded-t-md mt-16 ml-0"
       >
@@ -114,6 +188,13 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Input
+            icon={Lock}
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <Input
             icon={Phone}
             type="text"
             placeholder="Phone Number"
@@ -134,21 +215,16 @@ const SignUp = () => {
             required
           />
 
-          {error && (
-            <p className="text-red-500 font-semibold text-center">{error}</p>
-          )}
-
           {/* Password Strength Meter */}
           <div className="w-full">
             <PasswordStrengthMeter password={password} />
           </div>
 
           <motion.button
-            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded "
+            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            disabled={isLoading}
           >
             {isLoading ? (
               <Loader className="animate-spin mx-auto" size={24} />

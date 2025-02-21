@@ -44,10 +44,10 @@ const Navbar = () => {
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.05, color: "#a78bfa" }}
-            className="text-gray-300 transition"
+            className="text-gray-300 transition hover:cursor-pointer"
             onClick={()=>setIsJoinModalOpen(true)}
           >
-            Join
+            Join 
           </motion.a>
           
           <motion.a
