@@ -10,7 +10,7 @@ import ForgotPassword from './pages/Authorization/ForgotPassword';
 import ResetPasswordPage from './pages/Authorization/ResetPassword';
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import MovieUploadForm from './pages/Movies/Upload';
 function App() {
 
   // return (
@@ -34,6 +34,7 @@ function App() {
             <Route path="/verify-email" element={<Verify/>}/>
             <Route path="/forgot-password" element={<ForgotPassword/> }/>
             <Route path="/reset-password/:token" element={<ResetPasswordPage/> }/>
+            <Route path="movie-upload-form" element={<MovieUploadForm/> }/>
           </Routes>
 
 
